@@ -1,0 +1,87 @@
+.menu-icon-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px 60px;
+  box-sizing: border-box;
+}
+
+.menu-icon-container svg {
+  height: 40px;
+  cursor: pointer;
+}
+
+.menu-container {
+  position: fixed;
+  background: yellow;
+  inset: 0;
+  font-family: "Roboto", sans-serif;
+  height: 0;
+  overflow: hidden;
+}
+
+.menu-container .logo {
+  font-size: 30px;
+  font-weight: 900;
+  color: #d62828;
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.menu-container .close-icon svg {
+  height: 40px;
+  cursor: pointer;
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+.menu-container .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-container .content {
+  padding: 30px 60px;
+  height: 100%;
+}
+
+.menu-container .menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: -74px;
+}
+
+.menu-container .menu-items a {
+  font-size: 50px;
+  text-decoration: none;
+  color: #000;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.menu-container .menu-items a::after {
+  content: attr(data-menu);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% - 100px), -50%);
+  font-size: 200px;
+  font-weight: 900;
+  opacity: 0;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: all 500ms ease;
+}
+
+.menu-container .menu-items a:hover::after {
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+}
